@@ -2,6 +2,8 @@ package com.github.mangelt.ms.get.invoice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.reactive.config.EnableWebFlux;
 
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @SpringBootApplication
+@EnableFeignClients("com.github.mangelt.ms.get.invoice.service")
+@EnableDiscoveryClient
 @EnableWebFlux
 @Slf4j
 public class App
